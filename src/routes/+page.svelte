@@ -35,10 +35,12 @@
     const [send, receive] = crossfade({});
 </script>
 
-<div class="columns-1 lg:columns-2 gap-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     {#each elements as element}
-        <a href={`${base}${element["dest"]}`} aria-label={element.alt}>
-            <img class="w-full mb-4 border hover:border-3 border-slate-800"
+        <a href={`${base}${element["dest"]}`}
+           aria-label={element.alt}
+           class="lg:last:odd:col-span-2 lg:last:odd:mx-auto lg:last:odd:w-[calc(50%-0.5rem)]">
+            <img class="w-full border hover:border-3 border-slate-800"
                  src={filenameToUrl(element["main-img"])}
                  alt={element.alt} />
         </a>
